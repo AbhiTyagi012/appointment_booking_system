@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/AdminPage.css';
 import { all_bookings } from '../api/userApi';
 
 const AdminPage = () => {
+  const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -23,9 +25,18 @@ const AdminPage = () => {
     fetchBookings();
   }, []);
 
+  const handleModeToggle = () => {
+    navigate('/');
+  };
+
   return (
     <div className="admin-container">
-      <h1 className="admin-title">All Bookings</h1>
+      <div className="header">
+        <h1 className="homepage-title">All Bookings</h1>
+        <button className="mode-toggle-button" onClick={handleModeToggle}>
+          Switch to User
+        </button>
+      </div>
 
       {loading && <p className="admin-loading">Loading bookings...</p>}
       {error && <p className="admin-error">{error}</p>}

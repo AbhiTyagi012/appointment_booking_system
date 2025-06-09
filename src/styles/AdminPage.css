@@ -57,4 +57,24 @@
   .admin-table tr:hover {
     background-color: #f1f1f1;
   }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mode-toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .mode-toggle-button:hover {
+    background-color: #0056b3;
+  }
   

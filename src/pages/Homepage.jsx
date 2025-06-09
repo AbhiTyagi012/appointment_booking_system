@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // 👈 Add this for navigation
 import SlotList from '../components/SlotList';
 import BookingForm from '../components/BookingForm';
 import Modal from '../components/Modal';
@@ -35,11 +36,13 @@ const generateSlots = () => {
 };
 
 const HomePage = () => {
+  const navigate = useNavigate(); 
   const [slotsData, setSlotsData] = useState([]);
   const [expandedDay, setExpandedDay] = useState(null);
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);  // 👈 state to track mode
 
   useEffect(() => {
     const generatedSlots = generateSlots();
@@ -60,9 +63,19 @@ const HomePage = () => {
     setShowModal(false);
   };
 
+  const handleModeToggle = () => {
+    navigate('/admin');
+  };
+
   return (
     <div className="homepage-container">
-      <h1 className="homepage-title">Available Time Slots (Next 7 Days)</h1>
+      <div className="header">
+        <h1 className="homepage-title">Available Time Slots (Next 7 Days)</h1>
+        <button className="mode-toggle-button" onClick={handleModeToggle}>
+          Switch to Admin
+        </button>
+      </div>
+
       <div className="day-list">
         {slotsData.map((day) => (
           <div key={day.date} className="day-card">
@@ -94,7 +107,6 @@ const HomePage = () => {
           />
         </Modal>
       )}
-
     </div>
   );
 };
