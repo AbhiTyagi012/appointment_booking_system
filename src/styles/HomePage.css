@@ -1,0 +1,112 @@
+/* HomePage.css */
+
+.homepage-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .homepage-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .day-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .day-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+  }
+  
+  .day-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .day-button {
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .day-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .day-button.expanded {
+    background-color: #e8f4ff;
+  }
+  
+  .day-icon {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .slot-list-container {
+    border-top: 1px solid #ddd;
+    padding: 15px 20px;
+    background-color: #fff;
+  }
+
+  .slot-list-container button {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  }
+  
+  .slot-list-container button:hover {
+    background-color: #e8f4ff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .slot-list-container button:focus {
+    outline: none;
+    background-color: #d0ebff;
+    border-color: #66afe9;
+    box-shadow: 0 0 0 2px rgba(100, 149, 237, 0.2);
+  }
+  
+  .slot-list-container button:active {
+    transform: translateY(1px);
+  }
+  
+  .booking-confirmation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6ffed;
+    color: #256029;
+    border: 1px solid #b7eb8f;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
